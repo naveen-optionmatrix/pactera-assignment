@@ -1,0 +1,32 @@
+<!-- header -->
+<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+  <a class="navbar-brand" href="#"><img src="assets/images/logo-lighter.png"></a>
+</nav>
+<!-- ./header -->
+
+<!-- content -->
+<main role="main">
+  <div class="container pt-3">
+
+
+    <div class="jumbotron mt-4">
+      <h1 class="display-4">Hello, Pactera!</h1>
+      <p class="lead">This is a simple site which generates the reports for the sales transactions in the form of
+        charts.</p>
+      <hr class="my-4">
+      <p>To view the sample reports, please upload the "salestransactions.csv" using the input below:</p>
+      <div class="lead">
+        <form enctype="multipart/form-data">
+          <input type="file" name="csvreport" id="csvreport" (change)="fileupload($event)">
+        </form>
+        <button *ngIf="fileUploaded" type="button" class="btn btn-primary mt-3" (click)="showResultsFunc()">Get
+          Reports</button>
+      </div>
+    </div>
+
+    <app-charts *ngIf="showResults"></app-charts>
+
+    <router-outlet></router-outlet>
+  </div>
+</main>
+<!-- ./content -->

@@ -1,0 +1,74 @@
+<div class="row">
+    <div class="col col-sm-6">
+        <div class="chart-div">
+            <!-- Line Chart -->
+            <h4>Day-wise Products Sales(Count)</h4>
+            <div *ngIf="chart.productSales.data.length > 0">
+                <google-chart [title]="chart.productSales.title" [type]="chart.productSales.type"
+                    [data]="chart.productSales.data" [columns]="chart.productSales.columnNames"
+                    [options]="chart.productSales.options" [width]="chart.productSales.width"
+                    [height]="chart.productSales.height">
+                </google-chart>
+            </div>
+        </div>
+    </div>
+    <div class="col col-sm-6">
+
+        <div class="chart-div">
+            <!-- Pie / Donut Chart -->
+            <h4>Market Composition</h4>
+
+            <div *ngIf="chart.marketComposition.data.length > 0">
+                <google-chart [title]="chart.marketComposition.title" [type]="chart.marketComposition.type"
+                    [data]="chart.marketComposition.data" [columns]="chart.marketComposition.columnNames"
+                    [options]="chart.marketComposition.options" [width]="chart.productSales.width"
+                    [height]="chart.productSales.height">
+                </google-chart>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col col-sm-6">
+        <!-- Area Chart -->
+        <h4>Day-wise Transactions(Amount)</h4>
+
+        <div *ngIf="chart.daywiseAmounts.data.length > 0">
+            <google-chart [title]="chart.daywiseAmounts.title" [type]="chart.daywiseAmounts.type"
+                [data]="chart.daywiseAmounts.data" [columns]="chart.daywiseAmounts.columnNames"
+                [options]="chart.daywiseAmounts.options" [width]="chart.productSales.width"
+                [height]="chart.productSales.height">
+            </google-chart>
+        </div>
+    </div>
+    <div class="col col-sm-6">
+        <!-- Pie / Donut Chart -->
+        <h4>Payment Type</h4>
+        <div *ngIf="chart.paymentTypes.data.length > 0">
+            <google-chart [title]="chart.paymentTypes.title" [type]="chart.paymentTypes.type"
+                [data]="chart.paymentTypes.data" [columns]="chart.paymentTypes.columnNames"
+                [options]="chart.paymentTypes.options" [width]="chart.paymentTypes.width"
+                [height]="chart.paymentTypes.height">
+            </google-chart>
+        </div>
+    </div>
+</div>
+
+
+<div class="row">
+    <div class="col">
+        <!-- Bar Chart -->
+        <h4>Country-wise Sales</h4>
+
+        <div *ngIf="chart.countrywiseSales.data.length > 0">
+
+            <google-chart [title]="chart.countrywiseSales.title" [type]="chart.countrywiseSales.type"
+                [data]="chart.countrywiseSales.data" [columns]="chart.countrywiseSales.columnNames"
+                [options]="chart.countrywiseSales.options" [width]="chart.countrywiseSales.width"
+                [height]="chart.countrywiseSales.height">
+            </google-chart>
+        </div>
+
+    </div>
+</div>
