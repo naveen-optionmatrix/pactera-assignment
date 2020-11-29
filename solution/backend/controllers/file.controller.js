@@ -12,7 +12,7 @@ const db = require("../models");
  * @returns string
  */
 fileUpload = async (req, res, next) => {
-    importCsvData2MySQL('uploads/' + req.file.filename);
+    await importCsvData2MySQL('uploads/' + req.file.filename);
     let msg = {
         'msg': 'File uploaded/import successfully!', 'file': req.file
     }
