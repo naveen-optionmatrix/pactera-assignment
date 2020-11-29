@@ -4,12 +4,15 @@
 const express = require('express')
 const multer = require('multer')
 const router = express.Router()
+const fs = require('fs')
 
 // global.__basedir = __dirname;
 
 // -> Multer Upload Storage
 const storage = multer.diskStorage({
     destination: (req, file, cb) => {
+        const path = `./uploads/`
+        fs.mkdirSync(path, { recursive: true })
         cb(null, 'uploads/')
     },
     filename: (req, file, cb) => {
